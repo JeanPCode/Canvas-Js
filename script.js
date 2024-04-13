@@ -10,7 +10,7 @@ const colorPicker = document.querySelector("#color-picker");
 
 //Variables predeterminadas para dibujar
 let prevMouseX, prevMouseY, snapshot,
-isDrawing = false,
+dibujando = false,
 selectedTool = "brush",
 brushWidth = 5,
 selectedColor = "#000";
@@ -28,8 +28,8 @@ window.addEventListener("load", () => {
 });
 
 //Variable para iniciar el dibujo
-const startDraw = (e) => {
-    isDrawing = true;
+const iniciarDibujo = (e) => {
+    dibujando = true;
     prevMouseX = e.offsetX; 
     prevMouseY = e.offsetY;
     ctx.beginPath(); 
@@ -40,8 +40,8 @@ const startDraw = (e) => {
 }
 
 //Variable para manejar el dibujo en tiempo real, dependiendo de la herramienta seleccionada
-const drawing = (e) => {
-    if(!isDrawing) return;
+const dibujar = (e) => {
+    if(!dibujando) return;
     ctx.putImageData(snapshot, 0, 0);
 
     if(selectedTool === "brush" || selectedTool === "eraser") {
@@ -81,6 +81,6 @@ colorPicker.addEventListener("change", () => {
 });
 
 //Por ultimo se crean eventos para manejar el inicio del dibujo, el dibujo y el fin del dibujo
-canvas.addEventListener("mousedown", startDraw);
-canvas.addEventListener("mousemove", drawing);
-canvas.addEventListener("mouseup", () => isDrawing = false);
+canvas.addEventListener("mousedown", iniciarDibujo);
+canvas.addEventListener("mousemove", dibujar);
+canvas.addEventListener("mouseup", () => dibujando = false);
