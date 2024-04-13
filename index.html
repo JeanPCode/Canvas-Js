@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>CANVAS</title>
+</head>
+<body>
+    <main>
+        <h1>My Art</h1>
+        <section class="drawing-board">
+            <canvas></canvas>
+        </section>
+        <section class="tools-board">
+            <div class="row">
+                <label class="title">OPCIONES</label>
+            </div>
+            <div class="row">
+                <ul class="options">
+                    <li class="option active tool" id="brush">
+                        <span class="material-symbols-outlined">brush</span>
+                        <span> Pincel</span>
+                    </li>
+                    <li class="option tool" id="eraser">
+                        <span class="material-symbols-outlined">ink_eraser</span>
+                        <span> Borrador</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul class="options">
+                    <li class="option">
+                        <input type="range" id="size-slider" min="1" max="30" value="5">
+                    </li>
+                </ul>
+            </div>
+            <div class="row colors">
+                <ul class="options">
+                    <li class="option selected"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option">
+                        <input type="color" id="color-picker" value="#4A98F7">
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
