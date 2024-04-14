@@ -93,7 +93,7 @@ main h1{
   font-size: 24px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: #0e7af5;
-  margin-bottom: 20PX;
+  margin-bottom: 20px;
 }
 
 .option :where(span, label){
